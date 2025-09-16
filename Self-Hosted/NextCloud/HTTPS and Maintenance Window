@@ -1,0 +1,6 @@
+cd /var/lib/docker/volumes/[CONTAINERNAME]/_data/config
+
+'overwriteprotocol' => 'https',
+
+
+'maintenance_window_start' => 1,
