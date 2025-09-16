@@ -1,0 +1,9 @@
+cd /etc/cron.d
+
+nano nextcloud-cron
+
+*/5 * * * * root docker exec -u www-data nextcloud php -f /var/www/html/cron.php
+
+sudo docker exec -u www-data nextcloud php -f /var/www/html/cron.php
+
+systemctl status cron
