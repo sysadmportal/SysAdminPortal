@@ -1,4 +1,4 @@
-1  sudo apt install -y apache2 apache2-utils
+    1  sudo apt install -y apache2 apache2-utils
     2  sudo apt update -y && sudo apt upgrade -y
     3  sudo systemctl enable apache2
     4  sudo chown www-data:www-data /var/www/html/ -R
