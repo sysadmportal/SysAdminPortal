@@ -1,0 +1,48 @@
+1  sudo apt install -y apache2 apache2-utils
+    2  sudo apt update -y && sudo apt upgrade -y
+    3  sudo systemctl enable apache2
+    4  sudo chown www-data:www-data /var/www/html/ -R
+    5  sudo apache2ctl -t
+    6  sudo nano /etc/apache2/conf-available/servername.conf
+    7  sudo a2enconf servername.conf
+    8  sudo systemctl reload apache2
+    9  sudo apache2ctl -t
+   10  sudo apt install mariadb-server mariadb-client
+   11  sudo systemctl enable mariadb
+   12  sudo mysql -u root
+   13  sudo  apt install software-properties-common -y
+   14  sudo add-apt-repository ppa:ondrej/php
+   15  sudo apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql php8.1-xml php8.1-zip php8.1-intl php8.1-gd php8.1-imap php8.1-bcmath libapache2-mod-php8.1 unzip
+   16  php -v
+   17  sudo systemctl restart apache2
+   18  sudo apt install npm
+   19  sudo apt install nodejs -y
+   20  nodejs -v
+   21  npm -v
+   22  sudo curl -sS https://getcomposer.org/installer -o composer-setup.php
+   23  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+   24  sudo rm composer-setup.php
+   25  sudo -u www-data composer --version
+   26  sudo a2enmod rewrite
+   27  sudo a2enmod headers
+   28  sudo systemctl restart apache2
+   29  sudo mkdir -p /var/www/mautic
+   30  sudo chown -R www-data:www-data /var/www
+   31  sudo nano /etc/apache2/sites-available/mautic.conf
+   32  sudo a2ensite mautic.conf
+   33  sudo systemctl reload apache2
+   34  # Add cloudflare gpg key
+   35  sudo mkdir -p --mode=0755 /usr/share/keyrings
+   36  curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+   37  # Add this repo to your apt repositories
+   38  echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | sudo tee /etc/apt/sources.list.d/cloudflared.list
+   39  # install cloudflared
+   40  sudo apt-get update && sudo apt-get install cloudflared
+   41  sudo cloudflared service install eyJhIjoiYjFkZWI5Yjc3Yzk0N2Y1OTk5MWVjOTk5NTQ4OTU4NDEiLCJ0IjoiMjk5YTVhYTYtOTc0ZS00ODY3LWIzZjQtMjUzNTZlMjk2ZGEyIiwicyI6Ill6VmhNakpqTjJRdFl6QmpNaTAwTURBNUxXRTNZV0l0WkRnME56WmlaV1ZtWVRneSJ9
+   42  ip a
+   43  sudo apt-get install -y certbot python3-certbot-apache
+   44  sudo certbot --apache
+   45  sudo -u www-data composer create-project mautic/recommended-project:^6 /var/www/mautic --no-interaction
+   46  sudo nano /etc/php/8.1/apache2/php.ini
+   47  sudo systemctl restart apache2
+   48  history
