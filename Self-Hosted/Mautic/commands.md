@@ -10,6 +10,7 @@ sudo systemctl enable apache2
 sudo chown www-data:www-data /var/www/html/ -R
 sudo apache2ctl -t
 sudo nano /etc/apache2/conf-available/servername.conf
+add the following ServerName localhost
 sudo a2enconf servername.conf
 sudo systemctl reload apache2
 sudo apache2ctl -t
