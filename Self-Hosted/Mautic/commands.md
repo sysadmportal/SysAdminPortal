@@ -1,7 +1,11 @@
+## Update & Upgrade System
+```
+sudo apt update -y && sudo apt upgrade -y
+``
+
 ## Apache Installation
 ```
 sudo apt install -y apache2 apache2-utils
-sudo apt update -y && sudo apt upgrade -y
 sudo systemctl enable apache2
 sudo chown www-data:www-data /var/www/html/ -R
 sudo apache2ctl -t
