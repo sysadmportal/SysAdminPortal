@@ -1,7 +1,7 @@
 ## Update & Upgrade System
 ```
 sudo apt update -y && sudo apt upgrade -y
-``
+```
 
 ## Apache Installation
 ```
