@@ -55,6 +55,20 @@ sudo systemctl restart apache2
 sudo mkdir -p /var/www/mautic
 sudo chown -R www-data:www-data /var/www
 sudo nano /etc/apache2/sites-available/mautic.conf
+```
+```
+<VirtualHost *:80>
+ ServerName your-domain.com
+ ServerAlias www.your-domain.com
+ DocumentRoot /var/www/mautic/docroot
+ <Directory /var/www/mautic/docroot>
+ AllowOverride All
+ Require all granted
+ </Directory>
+ ErrorLog ${APACHE_LOG_DIR}/mautic_error.log
+ CustomLog ${APACHE_LOG_DIR}/mautic_access.log combined
+</VirtualHost>
+```
 sudo a2ensite mautic.conf
 sudo systemctl reload apache2
 ```
