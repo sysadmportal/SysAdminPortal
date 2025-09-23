@@ -73,7 +73,7 @@ sudo nano /etc/apache2/sites-available/mautic.conf
 sudo a2ensite mautic.conf
 sudo systemctl reload apache2
 ```
-```
+
 ## Connect Cloudfare
 ```
 Connect Cloudfare HTTP
