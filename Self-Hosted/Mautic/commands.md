@@ -69,8 +69,10 @@ sudo nano /etc/apache2/sites-available/mautic.conf
  CustomLog ${APACHE_LOG_DIR}/mautic_access.log combined
 </VirtualHost>
 ```
+```
 sudo a2ensite mautic.conf
 sudo systemctl reload apache2
+```
 ```
 ## Connect Cloudfare
 ```
